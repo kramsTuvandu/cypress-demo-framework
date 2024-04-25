@@ -19,7 +19,6 @@ pipeline {
     //as environment variables for all steps, or stage-specific steps, depending on where the environment directive is located within the Pipeline.
     environment {
         BUILD_USER = ''
-        npm install cypress --save-dev
     }
     
     //The parameters directive provides a list of parameters that a user should provide when triggering the Pipeline.
@@ -46,6 +45,7 @@ pipeline {
             //The steps section defines a series of one or more steps to be executed in a given stage directive.
             steps {
                 echo "Building the application"
+                npm install cypress --save-dev
             }
         }
         
