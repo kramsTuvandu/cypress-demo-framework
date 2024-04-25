@@ -6,7 +6,7 @@ def COLOR_MAP = [
 ]
 
 def getBuildUser() {
-    return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
+    //return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
 }
 
 
@@ -69,7 +69,7 @@ pipeline {
             //For most use-cases, the script step should be unnecessary in Declarative Pipelines, but it can provide
             //a useful "escape hatch." script blocks of non-trivial size and/or complexity should be moved into Shared Libraries instead.
             script {
-                //BUILD_USER = getBuildUser()
+                BUILD_USER = getBuildUser()
             }
             
             slackSend channel: '#jenkins-example',
