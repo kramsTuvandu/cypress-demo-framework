@@ -63,4 +63,10 @@ pipeline {
         }
     }
 
+    post {
+        always {
+            echo "The script step takes a block of Scripted Pipeline and executes that in the Declarative Pipeline. "
+        }
+    }
+
 }
