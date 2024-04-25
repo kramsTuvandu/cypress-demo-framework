@@ -45,12 +45,12 @@ pipeline {
             //The steps section defines a series of one or more steps to be executed in a given stage directive.
             steps {
                 echo "Building the application"
-                npm install cypress --save-dev
             }
         }
         
         stage('Testing') {
             steps {
+                bat "npm install cypress --save-dev"
                 bat "npm i"
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
